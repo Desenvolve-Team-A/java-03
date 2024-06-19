@@ -4,25 +4,23 @@ public class Quiz {
 
 
 
-    public void startQuiz() {
+    public void começarQuiz() {
         Scanner scanner = new Scanner(System.in);
-        int totalScore = 0;
-        int numCorrectAnswers = 0;
-        //int userAnswer;
+        int totalPontos = 0;
+        int respostasCorretas = 0;
 
         //loop para iterar sobre as perguntas selecionadas e as suas opções
 
 
         //condicional para pegar o peso das questões e somar
-        if (userAnswer == currentQuestion.getCorrectOptionIndex() + 1) {
-            int questionScore = currentQuestion.getWeight();
-            totalScore += questionScore;
-            numCorrectAnswers++;
-            System.out.println("Acertou! Você ganhou " + questionScore + " pontos.\n");
+        if (resposta == respostaCerta) {
+            int pontos = perguntaAtual.peso;
+            totalPontos += pontos;
+            respostasCorretas++;
+            System.out.println("Acertou! Você ganhou " + pontos + " pontos.\n");
         } else {
             System.out.println("Você errou!.\n");
         }
-
         scanner.close();
     }
 }
