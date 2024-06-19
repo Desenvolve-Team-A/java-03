@@ -1,11 +1,8 @@
-import java.util.*;
-
 public class Quiz {
 
 
 
     public void começarQuiz() {
-        Scanner scanner = new Scanner(System.in);
         int totalPontos = 0;
         int respostasCorretas = 0;
 
