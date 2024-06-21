@@ -11,7 +11,7 @@ public class Main {
       boolean validate = false;
 
       while (!validate) {
-        System.out.print("|| DIGITE SUA OPCAO: \n");
+        System.out.print("|| DIGITE SUA OPCAO: ");
         if (scanner.hasNextInt()) {
           int option = scanner.nextInt();
           if (option == 1 || option == 2) {
