@@ -56,10 +56,10 @@ public class Quiz {
         correct++;
         score += (i + 1);
       } else {
-        System.out.println("\nVoce errou!\n");
+        System.out.println("\nVoce errou!");
       }
     }
-
+    System.out.println("");
     ui.printDot();
     System.out.println("|| Voce acertou " + correct + " perguntas.");
     System.out.println("|| Sua pontuacao final e de: " + score);
