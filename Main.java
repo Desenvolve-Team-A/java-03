@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Main {
   public static void main(String[] args) {
@@ -9,34 +8,31 @@ public class Main {
 
     while (true) {
       ui.menu();
-      int option = -1;
       boolean validate = false;
 
       while (!validate) {
-        try {
-          System.out.print("|| DIGITE SUA OPCAO: ");
-          option = scanner.nextInt();
+        System.out.print("|| DIGITE SUA OPCAO: ");
+        if (scanner.hasNextInt()) {
+          int option = scanner.nextInt();
           if (option == 1 || option == 2) {
             validate = true;
+            if (option == 1) {
+              List<Question> listQuestions = QuestionRepository.getQuestions();
+              Quiz quiz = new Quiz(listQuestions, ui);
+              quiz.start();
+            } else if (option == 2) {
+              ui.printSpace();
+              ui.out();
+              ui.printSpace();
+              System.exit(0);
+            }
           } else {
-            System.out.println("Opção inválida. Tente novamente.");
+            System.out.println("Opcao invalida. Tente novamente.");
           }
-        } catch (InputMismatchException e) {
-          System.out.println("Entrada inválida. Por favor, digite um número.");
+        } else {
+          System.out.println("Opcao invalida. Tente novamente.");
           scanner.next();
         }
-      }
-
-      if (option == 1) {
-        List<Question> listQuestions = QuestionRepository.getQuestions();
-
-        Quiz quiz = new Quiz(listQuestions, ui);
-        quiz.iniciar();
-      } else if (option == 2) {
-        ui.printSpace();
-        ui.out();
-        ui.printSpace();
-        break;
       }
     }
   }

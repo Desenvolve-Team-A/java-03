@@ -17,7 +17,7 @@ public class Quiz {
     this.ui = ui;
   }
 
-  public void iniciar() {
+  public void start() {
     Scanner scanner = new Scanner(System.in);
     Collections.shuffle(questions);
 
@@ -39,21 +39,21 @@ public class Quiz {
 
       while (!checkAnswer) {
         System.out.print("Sua resposta (1-4): ");
-        try {
-          thisAnswer = scanner.nextInt() - 1;
+        if (scanner.hasNextInt()) {
+          thisAnswer = scanner.nextInt() - 1; // Menos 1 porque o array começa em 0;
           if (thisAnswer < 0 || thisAnswer > 3) {
-            System.out.println("Resposta inválida. Por favor, digite um número entre 1 e 4.");
+            System.out.println("Resposta invalida. Por favor, digite um numero entre 1 e 4.");
           } else {
             checkAnswer = true;
           }
-        } catch (InputMismatchException e) {
-          System.out.println("Entrada inválida. Por favor, digite um número entre 1 e 4.");
+        } else {
+          System.out.println("Resposta invalida. Por favor, digite um numero entre 1 e 4.");
           scanner.next();
         }
       }
 
       if (ask.checkAnswer(thisAnswer)) {
-        System.out.println("Acertou! Você ganhou " + score + " pontos.");
+        System.out.println("Acertou! Voce ganhou " + score + " pontos.");
         correct++;
         score += (i + 1);
       } else {
@@ -62,8 +62,8 @@ public class Quiz {
     }
 
     ui.printDot();
-    System.out.println("|| Você acertou " + correct + " perguntas.");
-    System.out.println("|| Sua pontuação final é de: " + score);
+    System.out.println("|| Voce acertou " + correct + " perguntas.");
+    System.out.println("|| Sua pontuacao final é de: " + score);
     ui.printDot();
     ui.printSpace();
 
