@@ -52,16 +52,16 @@ public class Quiz {
       }
 
       if (ask.checkAnswer(thisAnswer)) {
-        System.out.println("\nAcertou!");
+        System.out.println("\nAcertou!\n");
         correct++;
         score += (i + 1);
       } else {
-        System.out.println("\nVoce errou!");
+        System.out.println("\nVoce errou!\n");
       }
     }
 
     ui.printDot();
-    System.out.println("\n\n|| Voce acertou " + correct + " perguntas.");
+    System.out.println("|| Voce acertou " + correct + " perguntas.");
     System.out.println("|| Sua pontuacao final e de: " + score);
     ui.printDot();
     ui.printSpace();
