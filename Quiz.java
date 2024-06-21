@@ -52,7 +52,7 @@ public class Quiz {
       }
 
       if (ask.checkAnswer(thisAnswer)) {
-        System.out.println("\nAcertou!\n");
+        System.out.println("\nAcertou!");
         correct++;
         score += (i + 1);
       } else {
