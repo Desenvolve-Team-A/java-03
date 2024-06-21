@@ -53,7 +53,7 @@ public class Quiz {
       }
 
       if (ask.checkAnswer(thisAnswer)) {
-        System.out.println("Acertou! Voce ganhou " + score + " pontos.");
+        System.out.println("Acertou!");
         correct++;
         score += (i + 1);
       } else {
