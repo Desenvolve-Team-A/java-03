@@ -36,7 +36,7 @@ public class Interface {
 
   public void lineQuestion() {
     printSpace();
-    System.out.println("|| PERGUNTA DIVONICA                                                ||");
+    System.out.println("|| PERGUNTA DIVONICA                                                ||\n");
   }
 
 }

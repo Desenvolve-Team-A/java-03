@@ -11,7 +11,7 @@ public class Main {
       boolean validate = false;
 
       while (!validate) {
-        System.out.print("|| DIGITE SUA OPCAO: ");
+        System.out.print("|| DIGITE SUA OPCAO: \n");
         if (scanner.hasNextInt()) {
           int option = scanner.nextInt();
           if (option == 1 || option == 2) {
@@ -27,10 +27,10 @@ public class Main {
               System.exit(0);
             }
           } else {
-            System.out.println("Opcao invalida. Tente novamente.");
+            System.out.println("\nOpcao invalida. Tente novamente.");
           }
         } else {
-          System.out.println("Opcao invalida. Tente novamente.");
+          System.out.println("\nOpcao invalida. Tente novamente.");
           scanner.next();
         }
       }
